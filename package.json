@@ -1,0 +1,14 @@
+{
+  "name": "backend-proving-ground-2",
+  "version": "1.0.0",
+  "description": "backend part of a simple app",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikołaj Siebielec",
+  "license": "ISC",
+  "dependencies": {
+    "typeorm": "^0.2.37"
+  }
+}
