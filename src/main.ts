@@ -1,7 +1,7 @@
 import connection from "./db/connection/db.connection";
 import { router } from "./services/router";
+import express from 'express';
 
-const express = require('express');
 const app = express();
 const port = process.env.port || 3000;
 
