@@ -1,21 +1,20 @@
 {
   "name": "backend-proving-ground-2",
   "version": "1.0.0",
-  "description": "backend part of a simple app",
-  "main": "main.ts",
-  "type": "module",
+  "description": "",
+  "main": "./dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/main.ts",
-    "start:dev": "nodemon"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mikołaj Siebielec",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^16.10.3",
-    "nodemon": "^2.0.13",
-    "ts-node": "^10.2.1",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "rimraf": "^3.0.2",
+    "tsc": "^2.0.3",
     "typeorm": "^0.2.38",
     "typescript": "^4.4.3"
   }

@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import TaskController from '../controllers/task.controller';
 
 export const router: express.Router = express.Router();
