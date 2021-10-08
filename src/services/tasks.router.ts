@@ -1,10 +1,13 @@
 import express from 'express';
-import TaskController from '../controllers/task.controller';
+import { Connection } from 'typeorm';
+import { controller } from './task.controller';
 
-export const router: express.Router = express.Router();
-// /tasks/:id - get all tasks, get task by id, send 200
-// /tasks/delete/:id - delete all tasks, delet task by id
-// tasks/add - add task, send 201
-router.get('/tasks/:id', (req, res) => TaskController.GetTask(req, res));
-router.post('/tasks/add', (req, res) => TaskController.AddTask(req, res));
-router.delete('tasks/delete/:id', (req, res) => TaskController.DeleteTask(req, res));
+export const createRouter = (connection: Connection): express.Router => {
+    const router: express.Router = express.Router();
+    const { getAllTasks, getTask, saveTask, deleteTask } = controller(connection);
+    router.get('/tasks', getAllTasks)
+    router.get('/tasks/:id', getTask);
+    router.post('/tasks/add', saveTask);
+    router.delete('/tasks/delete/:id', deleteTask);
+    return router;
+};
