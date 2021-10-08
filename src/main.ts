@@ -1,6 +1,6 @@
 import express from 'express';
 import { createRouter } from "./services/tasks.router";
-// import TaskController from "./services/task.controller";
+import cors from 'cors';
 import connection from "./db/connection/db.connection";
 
 const app = express();
@@ -13,6 +13,7 @@ const bootstrap = async () => {
     if (!dbConnection)
         throw new Error('Could not connect to database');
 
+    app.use(cors());
     app.use(express.json());
     app.use('/', createRouter(dbConnection));
 
