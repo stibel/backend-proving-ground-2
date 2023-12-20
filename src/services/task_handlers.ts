@@ -1,6 +1,6 @@
 import { DeleteResult, Repository } from "typeorm";
 import { TaskDTO } from "../db/dto/task.dto";
-import { Task } from "../db/entities/task";
+import { Task } from "../db/entities/Task";
 
 export const getAll = async (
     repository: Repository<Task>
