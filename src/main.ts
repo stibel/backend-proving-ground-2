@@ -14,7 +14,7 @@ const bootstrap = async () => {
 
   app.use(cors());
   app.use(express.json());
-  app.use("/", createRouter(dbConnection));
+  app.use("/tasks", createRouter(dbConnection));
   app.use("/users", createUserRouter(dbConnection));
 
   app.listen(port, (): void => {
@@ -22,4 +22,4 @@ const bootstrap = async () => {
   });
 };
 
-bootstrap();
+bootstrap().catch((err) => console.log(err));
