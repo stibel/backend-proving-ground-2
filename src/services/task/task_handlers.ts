@@ -4,8 +4,10 @@ import { Task } from "../../db/entities/Task";
 
 export const getAll = async (
   repository: Repository<Task>,
+  user: string,
 ): Promise<Array<Task> | undefined> => {
-  return repository.find();
+  console.log(user);
+  return repository.find({ where: [{ user: user }] });
 };
 
 export const getOne = async (

@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/main.js",
   "scripts": {
-    "test": "node ./dist/main.js"
+    "start": "node ./dist/main.js"
   },
   "author": "Mikołaj Siebielec",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.7.1",
     "rimraf": "^3.0.2",
     "tsc": "^2.0.3",
@@ -21,6 +22,7 @@
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^16.10.3",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",

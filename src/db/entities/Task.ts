@@ -1,14 +1,21 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
 @Entity()
 export class Task {
-    
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    content: string;
+  @Column()
+  content: string;
 
-    @CreateDateColumn()
-    additionTime: Date 
+  @Column()
+  user: string;
+
+  @CreateDateColumn()
+  additionTime: Date;
 }
