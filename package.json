@@ -4,6 +4,7 @@
   "description": "",
   "main": "./dist/main.js",
   "scripts": {
+    "build": "tsc --outDir build",
     "start": "node ./dist/main.js"
   },
   "author": "Mikołaj Siebielec",
@@ -15,7 +16,6 @@
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.7.1",
     "rimraf": "^3.0.2",
-    "tsc": "^2.0.3",
     "typeorm": "^0.2.38"
   },
   "devDependencies": {
