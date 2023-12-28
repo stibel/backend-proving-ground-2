@@ -9,7 +9,6 @@ export const authenticate = (
   const authHeader = req.headers["authorization"];
   const token: string | undefined = authHeader && authHeader.split(" ")[1];
 
-  console.log(token);
   if (!token) return res.sendStatus(401);
 
   verify(token, process.env.ACCESS_TOKEN_SECRET as string, (err, user) => {

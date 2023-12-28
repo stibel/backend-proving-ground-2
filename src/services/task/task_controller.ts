@@ -20,7 +20,6 @@ export const controller = (connection: Connection) => {
 
   const saveTask = async (req: Request, res: Response): Promise<void> => {
     const { body } = req;
-    console.log(req.body);
     try {
       res.status(HttpStatus.ADDED).json(await save(taskRepository, body));
     } catch (err) {

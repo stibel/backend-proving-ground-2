@@ -16,6 +16,7 @@ const bootstrap = async () => {
 
   app.use(cors());
   app.use(express.json());
+  app.get("/", (req, res) => res.send("Hello world!"));
   app.use("/tasks", createRouter(dbConnection));
   app.use("/users", createUserRouter(dbConnection));
 

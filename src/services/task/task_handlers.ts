@@ -6,7 +6,6 @@ export const getAll = async (
   repository: Repository<Task>,
   user: string,
 ): Promise<Array<Task> | undefined> => {
-  console.log(user);
   return repository.find({ where: [{ user: user }] });
 };
 

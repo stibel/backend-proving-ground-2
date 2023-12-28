@@ -1,6 +1,7 @@
 import { Connection, createConnection } from "typeorm";
 import { Task } from "../entities/Task";
 import { User } from "../entities/User";
+import { RefreshToken } from "../entities/RefreshToken";
 
 const connection = async (): Promise<Connection> =>
   await createConnection({
@@ -11,7 +12,7 @@ const connection = async (): Promise<Connection> =>
     password: "postgres123",
     database: "tasks_db",
     synchronize: true,
-    entities: [Task, User],
+    entities: [Task, User, RefreshToken],
   });
 
 export default connection;
