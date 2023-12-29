@@ -6,7 +6,7 @@ import { RefreshToken } from "../entities/RefreshToken";
 const connection = async (): Promise<Connection> =>
   await createConnection({
     type: "postgres",
-    host: "localhost",
+    host: "tasks_database",
     port: 5432,
     username: "postgres",
     password: "postgres123",

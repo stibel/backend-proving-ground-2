@@ -1,17 +1,15 @@
 FROM node:alpine as base
 
-COPY package*.json ./
+WORKDIR /app
 
-RUN npm install
+COPY package*.json .
+
+RUN npm i
 
 COPY . .
 
 RUN npm run build
 
-WORKDIR dist
+EXPOSE 3000
 
-COPY package*.json ./
-
-RUN npm install --only=production
-
-CMD ["node", "./main.js"]
+CMD ["node", "build/main.js"]
