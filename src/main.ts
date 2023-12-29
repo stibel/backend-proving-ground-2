@@ -11,8 +11,8 @@ const port = process.env.PORT || 3000;
 
 const bootstrap = async () => {
   const dbConnection = await connection().catch((err) => console.error(err));
-
   if (!dbConnection) throw new Error("Could not connect to database");
+  console.log(process.env.REFRESH_TOKEN_SECRET);
 
   app.use(cors());
   app.use(express.json());

@@ -42,7 +42,7 @@ export const login = async (
   const accessToken = sign(
     { username: user.username },
     process.env.ACCESS_TOKEN_SECRET as string,
-    { expiresIn: "5s" },
+    { expiresIn: "15m" },
   );
 
   const refreshToken = sign(
@@ -50,16 +50,15 @@ export const login = async (
     process.env.REFRESH_TOKEN_SECRET as string,
   );
 
-  const refresh = await tokenRepository.save({ token: refreshToken });
+  const { token } = await tokenRepository.save({ token: refreshToken });
 
-  return { accessToken, refreshToken: refresh };
+  return { accessToken, refreshToken: token };
 };
 
 export const refresh = async (
   tokenRepository: Repository<RefreshToken>,
   dto: TokenDto,
 ) => {
-  console.log("REFRESH");
   const { token } = dto;
   if (!token) {
     throw new Error("No refresh token provided!");
@@ -86,7 +85,7 @@ export const refresh = async (
       newAccessToken = sign(
         { username: user.username },
         process.env.ACCESS_TOKEN_SECRET as string,
-        { expiresIn: "5s" },
+        { expiresIn: "15m" },
       );
     },
   );
